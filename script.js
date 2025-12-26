@@ -265,7 +265,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const uniqueId = generateNanoId();
         const fileName = 'media/' + uniqueId + '.' + fileExtension;
         
-        // Step 1: Get signed URL from API
         const signedUrlResponse = await fetch(
             'https://interact-screw-basic-outcome.trycloudflare.com/media/get-upload-url?fileName=' + encodeURIComponent(fileName) + '&projectId=dressr',
             { method: 'GET' }
