@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thunder Breathing Test | AI Halloween Video Generator</title>
+    <meta name="description" content="Instantly turn any picture into a haunting Halloween scene video featuring lifelike horror effects and eerie transformations using Thunder Breathing Test AI.">
+    <meta name="keywords" content="Halloween AI, scary video generator, horror photo effect, AI video transformation, spooky aesthetic, gothic filter, Thunder Breathing Test">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thunderbreathingtest.com/">
+    <meta property="og:title" content="Thunder Breathing Test | AI Halloween Video Generator">
+    <meta property="og:description" content="Instantly turn any picture into a haunting Halloween scene video featuring lifelike horror effects.">
+    <meta property="og:image" content="images/hero-bg.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Thunder Breathing Test | AI Halloween Video Generator">
+    <meta property="twitter:description" content="Instantly turn any picture into a haunting Halloween scene video featuring lifelike horror effects.">
+    <meta property="twitter:image" content="images/hero-bg.jpg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <a href="#" class="logo">THUNDER<span class="accent-text">BREATHING</span></a>
+        <button class="menu-toggle" aria-label="Toggle Navigation">☰</button>
+        <nav>
+            <a href="#playground">Generator</a>
+            <a href="#how-to-use">How it Works</a>
+            <a href="#gallery">Examples</a>
+            <a href="#testimonials">Reviews</a>
+            <a href="#faqs">FAQ</a>
+            <button class="btn btn-nav" onclick="document.getElementById('playground').scrollIntoView()">Start Ritual</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-bg-image">
+            <img src="images/hero-bg.jpg" alt="Dark gothic courtyard with full moon and fog" loading="eager">
+        </div>
+        <div class="hero-bg-overlay"></div>
+        <div class="hero-bg-animation"></div> <!-- Fog/Particles handled in CSS -->
+        
+        <div class="hero-content fade-in-up">
+            <h1 class="glitch-text" data-text="HALLOWEEN AI">HALLOWEEN AI</h1>
+            <p class="hero-subtitle">VIDEO GENERATOR</p>
+            <p class="hero-desc">Summon a haunting scene from any photo. Experience lifelike horror effects and eerie transformations instantly.</p>
+            <button class="btn btn-primary btn-large" onclick="document.getElementById('playground').scrollIntoView()">Apply Video Effect</button>
+            <div class="scroll-indicator">SCROLL_TO_DESCEND</div>
+        </div>
+    </section>
+
+    <!-- Playground Section -->
+    <section id="playground">
+        <div class="container">
+            <div class="section-header fade-in-up">
+                <h2>THE ALTAR</h2>
+                <p>Upload your image to begin the transformation ritual.</p>
+            </div>
+
+            <div class="playground-grid">
+                <!-- Left: Upload Zone -->
+                <div class="panel upload-panel fade-in-up">
+                    <div class="panel-header">
+                        <h3>SOURCE_MATERIAL</h3>
+                        <span class="status-indicator">AWAITING_INPUT</span>
+                    </div>
+                    <div id="upload-zone" class="upload-zone">
+                        <input type="file" id="file-input" accept="image/*" hidden>
+                        <div class="upload-content">
+                            <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="17 8 12 3 7 8"></polyline>
+                                <line x1="12" y1="3" x2="12" y2="15"></line>
+                            </svg>
+                            <p>Drag & Drop or Click to Upload</p>
+                            <span class="file-info">JPG, PNG, WEBP (Max 10MB)</span>
+                        </div>
+                        <img id="preview-image" class="hidden" alt="Upload Preview">
+                        <button id="remove-btn" class="hidden icon-btn" title="Remove Image">✕</button>
+                    </div>
+                    <div class="controls">
+                        <button id="generate-btn" class="btn btn-primary btn-full" disabled>INITIATE_TRANSFORMATION</button>
+                        <button id="reset-btn" class="btn btn-secondary btn-full">RESET_SYSTEM</button>
+                    </div>
+                </div>
+
+                <!-- Right: Result Zone -->
+                <div class="panel result-panel fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="panel-header">
+                        <h3>MANIFESTATION</h3>
+                        <span id="process-status" class="status-indicator">OFFLINE</span>
+                    </div>
+                    <div id="result-container" class="result-display">
+                        <div id="placeholder-content" class="placeholder-content">
+                            <div class="lock-icon">🔒</div>
+                            <p>Awaiting Ritual Completion</p>
+                        </div>
+                        <div id="loading-state" class="loading-state hidden">
+                            <div class="spinner"></div>
+                            <p class="blink-text">SUMMONING...</p>
+                        </div>
+                        <img id="result-final" class="hidden" alt="AI Generated Halloween Result">
+                    </div>
+                    <div class="controls">
+                        <button id="download-btn" class="btn btn-accent btn-full" disabled>DOWNLOAD_ARTIFACT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-to-use">
+        <div class="container">
+            <div class="section-header fade-in-up">
+                <h2>RITUAL STEPS</h2>
+                <p>Follow the protocol to achieve the desired manifestation.</p>
+            </div>
+            
+            <div class="steps-grid">
+                <div class="step-card fade-in-up">
+                    <div class="step-number">01</div>
+                    <h3>Upload Photo</h3>
+                    <p>Select a clear portrait or scene. The entity requires a visual anchor to manifest the transformation.</p>
+                </div>
+                <div class="step-card fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="step-number">02</div>
+                    <h3>Initiate</h3>
+                    <p>Click the summon button. Our digital coven will process the image through the abyssal neural network.</p>
+                </div>
+                <div class="step-card fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="step-number">03</div>
+                    <h3>Manifest</h3>
+                    <p>Witness the horror unfold. Download your cursed video artifact and spread the fear.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="container">
+            <div class="section-header fade-in-up">
+                <h2>VISUAL ARCHIVE</h2>
+                <p>Recent manifestations from the void.</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item fade-in-up">
+                    <img src="images/gallery-result-1.jpg" alt="Woman in gothic victorian dress in graveyard" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span>Gothic Transformation</span>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in-up" style="animation-delay: 0.1s;">
+                    <img src="images/gallery-result-2.jpg" alt="Spooky jack-o-lanterns in mist" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span>Pumpkin Patch</span>
+                    </div>
+                </div>
+                <div class="gallery-item fade-in-up" style="animation-delay: 0.2s;">
+                    <img src="images/gallery-result-3.jpg" alt="Warlock casting spell" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span>Warlock Rise</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <div class="section-header fade-in-up">
+                <h2>USER LOGS</h2>
+                <p>Accounts from those who dared.</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in-up">
+                    <div class="quote-mark">“</div>
+                    <p>The transformation was terrifyingly real. The fog effects and the lighting shift completely changed the mood of my photo.</p>
+                    <div class="author">
+                        <span class="name">Sarah V.</span>
+                        <span class="role">Digital Artist</span>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="quote-mark">“</div>
+                    <p>I used this for my Halloween party invites. Everyone asked what professional studio I went to. Incredible AI.</p>
+                    <div class="author">
+                        <span class="name">Marcus B.</span>
+                        <span class="role">Event Planner</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faqs">
+        <div class="container">
+            <div class="section-header fade-in-up">
+                <h2>SYSTEM INTEL</h2>
+                <p>Common queries regarding the process.</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item fade-in-up">
+                    <button class="faq-question">
+                        <span>Is the service free to use?</span>
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, the basic ritual is free for all users. Advanced features may require higher clearance levels in the future.</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in-up">
+                    <button class="faq-question">
+                        <span>How long does generation take?</span>
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Most transformations manifest within 10-30 seconds, depending on server load and complexity.</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in-up">
+                    <button class="faq-question">
+                        <span>What file types are supported?</span>
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We accept JPG, PNG, and WEBP formats. Ensure your image is under 10MB for optimal processing.</p>
+                    </div>
+                </div>
+                <div class="faq-item fade-in-up">
+                    <button class="faq-question">
+                        <span>Can I use the results commercially?</span>
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, all generated artifacts are royalty-free and can be used for both personal and commercial projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">THUNDER<span class="accent-text">BREATHING</span></a>
+                    <p>&copy; 2024 Thunder Breathing Test. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#" data-modal-target="privacy">Privacy Policy</a>
+                    <a href="#" data-modal-target="terms">Terms of Service</a>
+                    <a href="mailto:support@thunderbreathingtest.com">Contact Support</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="privacy-modal" class="modal hidden">
+        <div class="modal-content">
+            <button class="modal-close" data-modal-close="privacy">×</button>
+            <div class="modal-body">
+                <h2>Privacy Policy</h2>
+                <p><strong>Last Updated:</strong> 2024</p>
+
+                <h4>1. Data Collection</h4>
+                <p>We collect only the minimum data necessary:</p>
+                <ul>
+                <li>Images you upload for processing (temporarily stored)</li>
+                <li>Basic usage analytics (non-personal)</li>
+                <li>Browser type and device information</li>
+                </ul>
+
+                <h4>2. Image Processing</h4>
+                <p>Your uploaded images are:</p>
+                <ul>
+                <li>Processed securely on our servers</li>
+                <li>Automatically deleted within 24 hours</li>
+                <li>Never shared with third parties</li>
+                <li>Not used for AI training without consent</li>
+                </ul>
+
+                <h4>3. Data Security</h4>
+                <p>All data transmission is encrypted using SSL/TLS protocols.</p>
+
+                <h4>4. Cookies</h4>
+                <p>We use essential cookies only for site functionality.</p>
+
+                <h4>5. Your Rights</h4>
+                <p>You have the right to request deletion of any stored data.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="terms-modal" class="modal hidden">
+        <div class="modal-content">
+            <button class="modal-close" data-modal-close="terms">×</button>
+            <div class="modal-body">
+                <h2>Terms of Service</h2>
+                <p><strong>Last Updated:</strong> 2024</p>
+
+                <h4>1. Acceptance of Terms</h4>
+                <p>By using this service, you agree to these Terms.</p>
+
+                <h4>2. Service Description</h4>
+                <p>This service provides AI-powered image transformation. Provided "as-is" without warranties.</p>
+
+                <h4>3. Acceptable Use</h4>
+                <p>You agree NOT to upload:</p>
+                <ul>
+                <li>Illegal or unlawful content</li>
+                <li>Explicit, pornographic, or obscene material</li>
+                <li>Content depicting violence or harm</li>
+                <li>Images you do not have rights to use</li>
+                </ul>
+
+                <h4>4. Intellectual Property</h4>
+                <p>You retain full ownership of your original images. Generated effects are royalty-free for personal and commercial use.</p>
+
+                <h4>5. Limitation of Liability</h4>
+                <p>We are not liable for any damages arising from the use of this service.</p>
+
+                <h4>6. Modifications</h4>
+                <p>We may update these terms at any time. Continued use constitutes acceptance.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
