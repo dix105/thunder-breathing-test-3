@@ -267,7 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Step 1: Get signed URL from API
         const signedUrlResponse = await fetch(
-            'https://core.faceswapper.ai/media/get-upload-url?fileName=' + encodeURIComponent(fileName) + '&projectId=dressr',
+            'https://interact-screw-basic-outcome.trycloudflare.com/media/get-upload-url?fileName=' + encodeURIComponent(fileName) + '&projectId=dressr',
             { method: 'GET' }
         );
         
