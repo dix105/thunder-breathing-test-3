@@ -266,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const fileName = 'media/' + uniqueId + '.' + fileExtension;
         
         const signedUrlResponse = await fetch(
-            'https://authentic-shareware-firms-consent.trycloudflare.com/media/get-upload-url?fileName=' + encodeURIComponent(fileName) + '&projectId=dressr',
+            'https://core.deepswapper.com/media/get-upload-url?fileName=' + encodeURIComponent(fileName) + '&projectId=emd',
             { method: 'GET' }
         );
         
