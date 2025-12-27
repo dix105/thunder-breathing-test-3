@@ -280,9 +280,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const uploadResponse = await fetch(signedUrl, {
             method: 'PUT',
             body: file,
-            headers: {
-                'Content-Type': file.type
-            }
         });
         
         if (!uploadResponse.ok) {
