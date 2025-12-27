@@ -266,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const fileName = 'media/' + uniqueId + '.' + fileExtension;
         
         const signedUrlResponse = await fetch(
-            'https://interact-screw-basic-outcome.trycloudflare.com/media/get-upload-url?fileName=' + encodeURIComponent(fileName) + '&projectId=dressr',
+            'https://authentic-shareware-firms-consent.trycloudflare.com/media/get-upload-url?fileName=' + encodeURIComponent(fileName) + '&projectId=dressr',
             { method: 'GET' }
         );
         
